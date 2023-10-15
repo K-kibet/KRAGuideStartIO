@@ -13,7 +13,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/nativeAdView">
+        app:layout_constraintBottom_toTopOf="@id/startAppBanner">
 
         <ImageView
             android:layout_width="match_parent"
@@ -45,11 +45,13 @@ You will however, continue to file your return until the obligation is cancelled
 " />
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/nativeAdView"
+    <com.startapp.sdk.ads.banner.Banner
+        android:id="@+id/startAppBanner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
+
+    <com.startapp.sdk.ads.banner.Mrec
+        android:id="@+id/startAppMrec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,7 +23,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/startAppMrec"
         android:layout_margin="20dp">
 
         <TextView
@@ -86,13 +96,13 @@
         </LinearLayout>
     </LinearLayout>
 
-    <com.applovin.mediation.ads.MaxAdView
-        android:id="@+id/adView"
-        xmlns:maxads="http://schemas.applovin.com/android/1.0"
-        maxads:adUnitId="@string/Banner_Ad_Unit"
+    <com.startapp.sdk.ads.banner.Banner
+        android:id="@+id/startAppBanner"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

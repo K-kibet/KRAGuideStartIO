@@ -4,19 +4,16 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.FrameLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.applovin.mediation.ads.MaxAdView;
-import com.applovin.mediation.ads.MaxInterstitialAd;
-import com.applovin.sdk.AppLovinSdk;
-import com.facebook.ads.AdSettings;
 import com.google.android.material.button.MaterialButton;
 import com.onesignal.OneSignal;
+import com.startapp.sdk.adsbase.AutoInterstitialPreferences;
+import com.startapp.sdk.adsbase.StartAppAd;
+import com.startapp.sdk.adsbase.StartAppSDK;
 
 public class MainActivity extends AppCompatActivity {
-    private MaxInterstitialAd mediationInterstitialAd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,16 +23,14 @@ public class MainActivity extends AppCompatActivity {
         MaterialButton btnStart = findViewById(R.id.btnStart);
         MaterialButton btnRate = findViewById(R.id.btnRate);
         MaterialButton btnAbout = findViewById(R.id.btnAbout);
-        FrameLayout nativeAdView = findViewById(R.id.nativeAdView);
 
 
-        AppLovinSdk.getInstance( this ).setMediationProvider( "max" );
-        AppLovinSdk.initializeSdk( this);
-        AdSettings.setDataProcessingOptions( new String[] {} );
+        StartAppSDK.setUserConsent (this,
+                "pas",
+                System.currentTimeMillis(),
+                true);
 
-
-        NativeController nativeController = new NativeController(MainActivity.this, nativeAdView);
-        nativeController.createNativeAd();
+        StartAppSDK.init(this, "StartApp App ID", false);
 
         OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE);
 
@@ -54,31 +49,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnStart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent dealsIntent = new Intent(MainActivity.this, TermsActivity.class);
-                startActivity(dealsIntent);
-                showMediationInterstitialAd();
-            }
+        btnStart.setOnClickListener(view -> {
+            Intent dealsIntent = new Intent(MainActivity.this, TermsActivity.class);
+            startActivity(dealsIntent);
+            StartAppAd.showAd(MainActivity.this);
         });
 
         btnAbout.setOnClickListener(view -> {
             Intent aboutIntent = new Intent(MainActivity.this, OneActivity.class);
             startActivity(aboutIntent);
+            StartAppAd.showAd(MainActivity.this);
         });
 
-        MaxAdView adView = findViewById(R.id.adView);
-        adView.loadAd();
-        adView.startAutoRefresh();
 
-        mediationInterstitialAd = new MaxInterstitialAd(getResources().getString(R.string.Interstitial_Ad_Unit), MainActivity.this);
-        mediationInterstitialAd.loadAd();
-    }
-    private void showMediationInterstitialAd() {
-        if (mediationInterstitialAd.isReady()) {
-            mediationInterstitialAd.showAd();
-        }
+        StartAppAd.setAutoInterstitialPreferences(
+                new AutoInterstitialPreferences()
+                        .setSecondsBetweenAds(60)
+        );
+
+        StartAppAd.setAutoInterstitialPreferences(
+                new AutoInterstitialPreferences()
+                        .setActivitiesBetweenAds(1)
+        );
     }
     private void shareApp() {
         Intent sendIntent = new Intent();

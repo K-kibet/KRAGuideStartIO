@@ -1,69 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <com.applovin.mediation.ads.MaxAdView
-        android:id="@+id/adView"
-        xmlns:maxads="http://schemas.applovin.com/android/1.0"
-        maxads:adUnitId="@string/Banner_Ad_Unit"
+    tools:context=".MainActivity"
+    >
+    <com.startapp.sdk.ads.banner.Banner
+        android:id="@+id/startAppBanner"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_margin="10dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/adView">
+        app:layout_constraintTop_toBottomOf="@id/startAppBanner"
+        >
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnStart"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:backgroundTint="@color/green"
             android:drawableEnd="@drawable/baseline_power_settings_new_24"
             android:text="Get Started"
-            android:backgroundTint="@color/green"/>
+            />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnRate"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:backgroundTint="@color/green"
             android:drawableEnd="@drawable/baseline_star_rate_24"
             android:text="Rate US"
-            android:backgroundTint="@color/green"/>
+            />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnShare"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:backgroundTint="@color/green"
             android:drawableEnd="@drawable/baseline_share_24"
             android:text="Share App"
-            android:backgroundTint="@color/green"/>
+            />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAbout"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:backgroundTint="@color/green"
             android:drawableEnd="@drawable/baseline_info_24"
             android:text="KRA BASIC GUIDE"
-            android:backgroundTint="@color/green"/>
+            />
 
     </LinearLayout>
+
     <FrameLayout
         android:id="@+id/nativeAdView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+
+        />
+
+    <com.startapp.sdk.ads.banner.Banner
+        android:id="@+id/startAppBannerOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

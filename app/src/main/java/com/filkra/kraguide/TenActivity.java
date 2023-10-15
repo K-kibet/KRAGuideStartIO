@@ -10,8 +10,5 @@ public class TenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ten);
-        FrameLayout nativeAdView = findViewById(R.id.nativeAdView);
-        NativeController nativeController = new NativeController(TenActivity.this, nativeAdView);
-        nativeController.createNativeAd();
     }
 }

@@ -10,8 +10,5 @@ public class TwoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_two);
-        FrameLayout nativeAdView = findViewById(R.id.nativeAdView);
-        NativeController nativeController = new NativeController(TwoActivity.this, nativeAdView);
-        nativeController.createNativeAd();
     }
 }

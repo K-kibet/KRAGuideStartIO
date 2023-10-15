@@ -10,8 +10,5 @@ public class ThreeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_three);
-        FrameLayout nativeAdView = findViewById(R.id.nativeAdView);
-        NativeController nativeController = new NativeController(ThreeActivity.this, nativeAdView);
-        nativeController.createNativeAd();
     }
 }

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">KRA SERVICE GUIDE</string>
-    <!--Max Ads -->
-    <string name="sdk_key">T3u_2BblliloQsw56cevn2vbN_9IGxpG2oO_HgNcTTn00qLb46_nRTiZ-ZeeR5EbV055KBH57mapRktfCliryb</string>
+    <!--Start.IO-->
+    <string name="startapp_app_id">209950688</string>
     <string name="Interstitial_Ad_Unit">34df189a928c9b18</string>
     <string name="Native_Ad_Unit">50045b22116435bc</string>
     <string name="Banner_Ad_Unit">49c8d4e1fcaa7fc4</string>

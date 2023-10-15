@@ -12,12 +12,11 @@
         android:padding="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/nativeAdView">
+        app:layout_constraintTop_toBottomOf="@id/startAppBanner">
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="180dp"
             android:src="@mipmap/ic_launcher"
             android:layout_margin="10dp"/>
 
@@ -40,12 +39,23 @@ Kindly log on to your iTax profile using your PIN and password, click on certifi
  To reprint TCC, kindly login to ITax and click on certificates then select consult and reprint TCC and click on consult, you can then proceed to download.
 " />
     </LinearLayout>
-
-    <FrameLayout
-        android:id="@+id/nativeAdView"
+    <com.startapp.sdk.ads.banner.Banner
+        android:id="@+id/startAppBanner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <com.startapp.sdk.ads.banner.Mrec
+        android:id="@+id/startAppMrec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

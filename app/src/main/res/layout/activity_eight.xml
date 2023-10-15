@@ -13,7 +13,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/nativeAdView">
+        app:layout_constraintBottom_toTopOf="@id/startAppBanner">
 
         <ImageView
             android:layout_width="match_parent"
@@ -36,11 +36,14 @@
             android:text="Kindly note that when filing returns for self-employment, on the basic information of the IT1 excel sheet, say yes to having any other source of income apart from employment income on row 7, then declare the gross amount in Sheet B, and expenses if any. On the balance sheet SR, no 1.1 put any number e.g. 1 and also put the same number on SR 6.1. validate and upload the return." />
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/nativeAdView"
+
+    <com.startapp.sdk.ads.banner.Banner
+        android:id="@+id/startAppBanner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

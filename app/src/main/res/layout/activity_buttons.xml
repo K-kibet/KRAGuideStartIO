@@ -108,17 +108,15 @@
                 app:cornerRadius="8dp"
                 android:textColor="@color/black"/>
 
-
-
-            <com.applovin.mediation.ads.MaxAdView
-                android:id="@+id/adView"
-                xmlns:maxads="http://schemas.applovin.com/android/1.0"
-                maxads:adUnitId="@string/Banner_Ad_Unit"
+            <com.startapp.sdk.ads.banner.Banner
+                android:id="@+id/startAppBanner"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"
+                />
 
             <TextView
                 android:layout_width="match_parent"
