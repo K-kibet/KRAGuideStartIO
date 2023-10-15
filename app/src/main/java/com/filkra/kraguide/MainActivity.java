@@ -30,7 +30,15 @@ public class MainActivity extends AppCompatActivity {
                 System.currentTimeMillis(),
                 true);
 
-        StartAppSDK.init(this, "StartApp App ID", false);
+        StartAppAd.setAutoInterstitialPreferences(
+                new AutoInterstitialPreferences()
+                        .setSecondsBetweenAds(60)
+        );
+
+        StartAppAd.setAutoInterstitialPreferences(
+                new AutoInterstitialPreferences()
+                        .setActivitiesBetweenAds(1)
+        );
 
         OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE);
 
@@ -61,16 +69,6 @@ public class MainActivity extends AppCompatActivity {
             StartAppAd.showAd(MainActivity.this);
         });
 
-
-        StartAppAd.setAutoInterstitialPreferences(
-                new AutoInterstitialPreferences()
-                        .setSecondsBetweenAds(60)
-        );
-
-        StartAppAd.setAutoInterstitialPreferences(
-                new AutoInterstitialPreferences()
-                        .setActivitiesBetweenAds(1)
-        );
     }
     private void shareApp() {
         Intent sendIntent = new Intent();
